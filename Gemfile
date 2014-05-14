@@ -13,6 +13,10 @@ group :development do
  gem'meta_request'
  gem 'mysql2', '0.3.14'
 end
+
+group :production do
+  gem 'pg'
+end
 gem 'tzinfo-data'
 
 # To use ActiveModel has_secure_password
