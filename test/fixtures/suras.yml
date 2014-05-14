@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_arabic: MyString
+  name_phonetic: MyString
+  nb_cards: 1
+  nb_versets: 1
+
+two:
+  name_arabic: MyString
+  name_phonetic: MyString
+  nb_cards: 1
+  nb_versets: 1

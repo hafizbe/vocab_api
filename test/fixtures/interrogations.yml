@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  response: 1
+  old_interval: 1
+  next_interval: 1
+  next_date: 2014-05-14
+  easiness_factor: 9.99
+  user_id: 1
+  card_id: 1
+
+two:
+  response: 1
+  old_interval: 1
+  next_interval: 1
+  next_date: 2014-05-14
+  easiness_factor: 9.99
+  user_id: 1
+  card_id: 1
