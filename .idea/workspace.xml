@@ -30,7 +30,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="263" selection-end="263" vertical-scroll-proportion="0.19101124" vertical-offset="175" max-vertical-offset="798">
+            <state line="8" column="0" selection-start="135" selection-end="135" vertical-scroll-proportion="0.26966292" vertical-offset="0" max-vertical-offset="777">
               <folding />
             </state>
           </provider>
@@ -74,8 +74,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/config/database.yml" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/suras_controller.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -600,7 +600,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="263" selection-end="263" vertical-scroll-proportion="0.19101124" vertical-offset="175" max-vertical-offset="798">
+        <state line="8" column="0" selection-start="135" selection-end="135" vertical-scroll-proportion="0.26966292" vertical-offset="0" max-vertical-offset="777">
           <folding />
         </state>
       </provider>
