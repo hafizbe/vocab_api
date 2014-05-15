@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514150322) do
+ActiveRecord::Schema.define(version: 20140515211044) do
 
   create_table "api_keys", force: true do |t|
     t.string   "token"
@@ -21,8 +21,12 @@ ActiveRecord::Schema.define(version: 20140514150322) do
   end
 
   create_table "cards", force: true do |t|
-    t.string   "content_ar"
-    t.string   "sura_id"
+    t.string   "word"
+    t.string   "english_m"
+    t.integer  "sura_id"
+    t.integer  "aya_id"
+    t.string   "urdu_m"
+    t.integer  "juzz_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

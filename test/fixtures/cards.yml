@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content_ar: MyString
-  surah_id: MyString
+  word: MyString
+  english_m: MyString
+  sura_id: 1
+  aya_id: 1
+  urdu_m: MyString
+  juzz_id: 1
 
 two:
-  content_ar: MyString
-  surah_id: MyString
+  word: MyString
+  english_m: MyString
+  sura_id: 1
+  aya_id: 1
+  urdu_m: MyString
+  juzz_id: 1

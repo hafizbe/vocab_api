@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
 
     after_create :create_api_key
 
+
+    def cards_known
+      self.cards
+    end
     private
 
 	    def create_api_key
