@@ -1,8 +1,10 @@
 VocabApi::Application.routes.draw do
 
+
+
   namespace :api do
     namespace :v1 do
-       get "suras/index"
+       get "suras/index" , :defaults => {:format => "json"}
         get "suras/show"
     end
   end

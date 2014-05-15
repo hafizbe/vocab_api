@@ -33,6 +33,9 @@ GEM
     erubis (2.7.0)
     hike (1.2.3)
     i18n (0.6.9)
+    jbuilder (1.5.3)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -95,6 +98,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  jbuilder
   meta_request
   mysql2 (= 0.3.14)
   pg

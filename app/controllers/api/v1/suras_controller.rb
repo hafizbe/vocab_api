@@ -1,11 +1,15 @@
-class Api::V1::SurasController < ApplicationController
 
-	before_filter :restrict_access
+
+class Api::V1::SurasController < ApplicationController
+  before_filter :restrict_access
+
+  respond_to :json
 
   def index
-  	@suras = Sura.all
+    @suras = Sura.all
+    respond_with @suras
 
-  	render json: {message: @suras}, status: 200
+
   end
 
   def show
