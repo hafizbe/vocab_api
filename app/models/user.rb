@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
           end
 
         end
-        points_total_user = (points_user.to_f / points_total_sura * 100).round 2 unless points_user = 0
+        points_total_user = (points_user.to_f / points_total_sura * 100).round 2 unless points_user == 0
 
          return [points_total_user, point1, point2, point3]
       end
