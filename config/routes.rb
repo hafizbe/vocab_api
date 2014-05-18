@@ -5,7 +5,9 @@ VocabApi::Application.routes.draw do
   namespace :api do
     namespace :v1 do
        get "suras/index" , :defaults => {:format => "json"}
-       get "users/get_cards_known" , :defaults => {:format => "json"}
+       get "users/cards" , :defaults => {:format => "json"}
+       get "users/create_interrogation" , :defaults => {:format => "json"}
+       get "users/suras", :defaults => {:format => "json"}
     end
   end
  

@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1290210876">
+  <component name="DataSourceManagerImpl" format="xml" hash="3769650263">
     <data-source source="LOCAL" name="Rails vocab_api: development" uuid="529de9ef-caa0-4cf4-b8f3-c50263e920e1">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\adel\vocab_api\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:mysql:localhost:3306/vocap_api_development</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/.RubyMine60/config/jdbc-drivers/mysql-connector-java-5.1.29-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="vocap-api-mysql" uuid="b15aaebe-8de9-495b-8dad-878de3b064df">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/vocab_api_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfcbdfcedfcfdfc6</user-password>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
       <libraries />
     </data-source>
   </component>

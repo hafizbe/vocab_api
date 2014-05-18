@@ -9,5 +9,6 @@ class Api::V1::SurasController < ApplicationController
   end
 
   def show
+
   end
 end

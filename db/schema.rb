@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515211044) do
+ActiveRecord::Schema.define(version: 20140518201930) do
 
   create_table "api_keys", force: true do |t|
     t.string   "token"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20140515211044) do
     t.datetime "updated_at"
   end
 
+  add_index "cards", ["sura_id"], name: "index_cards_on_sura_id", using: :btree
+
   create_table "interrogations", force: true do |t|
     t.integer  "response"
     t.integer  "old_interval"
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140515211044) do
   end
 
   add_index "interrogations", ["card_id", "user_id", "date_response"], name: "Index unique Interrogations", unique: true, using: :btree
+  add_index "interrogations", ["card_id", "user_id"], name: "index_interrogations_on_card_id_and_user_id", unique: true, using: :btree
   add_index "interrogations", ["card_id"], name: "index_interrogations_on_card_id", using: :btree
   add_index "interrogations", ["user_id"], name: "index_interrogations_on_user_id", using: :btree
 

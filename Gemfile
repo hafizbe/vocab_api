@@ -5,6 +5,7 @@ gem 'rails', '4.1.1'
 
 gem 'nokogiri', '~> 1.6.2.1'
 gem 'rails-api'
+gem 'annotate'
 
 
 

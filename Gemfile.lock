@@ -27,6 +27,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.6.1)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
     callsite (0.0.11)
@@ -50,6 +53,8 @@ GEM
     multi_json (1.10.0)
     mysql2 (0.3.14)
     nokogiri (1.6.2.1-x64-mingw32)
+      mini_portile (= 0.6.0)
+    nokogiri (1.6.2.1-x86-mingw32)
       mini_portile (= 0.6.0)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.4)
@@ -101,6 +106,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  annotate
   jbuilder
   meta_request
   mysql2 (= 0.3.14)
