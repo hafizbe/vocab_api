@@ -46,6 +46,7 @@ class User < ActiveRecord::Base
         interrogation.next_date = spaced_repetition.next_repetition_date
         interrogation.user = self
         interrogation.card = card
+        interrogation.response = response_value
 
         if  !interrogation.save
           raise "Ajout du mot impossible"
