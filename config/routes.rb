@@ -8,6 +8,7 @@ VocabApi::Application.routes.draw do
        get "users/cards" , :defaults => {:format => "json"}
        get "users/create_interrogation" , :defaults => {:format => "json"}
        get "users/suras", :defaults => {:format => "json"}
+       get "users/cards_by_sura", :defaults => {:format => "json"}
     end
   end
  

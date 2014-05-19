@@ -1,1 +1,1 @@
-json.result @statistics
+ json.result @statistics

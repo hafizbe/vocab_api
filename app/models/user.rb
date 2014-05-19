@@ -18,6 +18,27 @@ class User < ActiveRecord::Base
 
     after_create :create_api_key
 
+    def cards_known(sura_id)
+      tab_retour = {}
+      cards_for_user = self.cards.where(:sura_id => sura_id).all
+      cards_for_user_ids = cards_for_user.ids
+
+      cards_for_user.each do |card|
+        response = {"response"=>card.response}
+        tab_retour[card.id] = card.attributes.merge response
+      end
+
+      if cards_for_user_ids.empty?
+        cards_for_user_ids = ''
+      end
+
+      cards_for_sura = Card.where.not(id: cards_for_user_ids).where(:sura_id => sura_id)
+      response = {"response"=> 0}
+      cards_for_sura.each do |card|
+        tab_retour[card.id] = card.attributes.merge response
+      end
+      tab_retour
+    end
 
     def suras_statistics
       tab_surah ={};
@@ -85,6 +106,6 @@ class User < ActiveRecord::Base
         end
         points_total_user = (points_user.to_f / points_total_sura * 100).round 2 unless points_user == 0
 
-         return [points_total_user, point1, point2, point3]
+         return   {'points_total_user'=> points_total_user, 'point1' => point1, 'point2' => point2, 'point3' => point3}
       end
 end
