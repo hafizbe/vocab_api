@@ -15,4 +15,7 @@
 
 class Card < ActiveRecord::Base
   belongs_to :sura
+  has_many :interrogations
+  has_many :users, ->{ select("users.*,interrogations.response, interrogations.next_date, interrogations.id as id_interrogation") },
+           :through => :interrogations
 end

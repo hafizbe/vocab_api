@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518201930) do
+ActiveRecord::Schema.define(version: 20140521144828) do
 
   create_table "api_keys", force: true do |t|
     t.string   "token"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140518201930) do
     t.decimal  "easiness_factor", precision: 10, scale: 0
     t.integer  "user_id"
     t.integer  "card_id"
-    t.date     "date_response"
+    t.datetime "date_response"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
