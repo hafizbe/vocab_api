@@ -47,7 +47,9 @@ class User < ActiveRecord::Base
       tab_surah =[];
       points_total_user = 0
       Sura.all.each do |sura|
-        tab_surah << statistics_by_sura(sura.id).merge("sura_id" => sura.id).merge("name_phonetic" => sura.name_phonetic).merge("name_arabic" => sura.name_arabic)
+        tab_surah << statistics_by_sura(sura.id).merge("sura_id" => sura.id)
+        .merge("name_phonetic" => sura.name_phonetic).merge("name_arabic" => sura.name_arabic)
+
       end
       tab_surah
 
@@ -114,6 +116,7 @@ class User < ActiveRecord::Base
         end
         points_total_user = (points_user.to_f / points_total_sura * 100).round 2 unless points_user == 0
 
-         return   {'points_total_user'=> points_total_user, 'point1' => point1, 'point2' => point2, 'point3' => point3}
+         return   {'points_total_user'=> points_total_user, 'point1' => point1, 'point2' => point2, 'point3' => point3,
+                  'nb_cards' => nb_cards}
       end
 end
