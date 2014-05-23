@@ -47,8 +47,7 @@ class User < ActiveRecord::Base
       tab_surah =[];
       points_total_user = 0
       Sura.all.each do |sura|
-        tab_surah << statistics_by_sura(sura.id).merge("sura_id" => sura.id)
-        .merge("name_phonetic" => sura.name_phonetic).merge("name_arabic" => sura.name_arabic)
+        tab_surah << statistics_by_sura(sura.id).merge("sura_id" => sura.id).merge("name_phonetic" => sura.name_phonetic).merge("name_arabic" => sura.name_arabic)
 
       end
       tab_surah
