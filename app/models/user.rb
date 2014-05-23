@@ -47,8 +47,7 @@ class User < ActiveRecord::Base
       tab_surah =[];
       points_total_user = 0
       Sura.all.each do |sura|
-        tab_surah << statistics_by_sura(sura.id).merge("sura_id" => sura.id)
-        .merge("name_phonetic" => sura.name_phonetic).merge("name_arabic" => sura.name_arabic)
+        tab_surah << statistics_by_sura(sura.id).merge("sura_id" => sura.id).merge("name_phonetic" => sura.name_phonetic).merge("name_arabic" => sura.name_arabic)
       end
       tab_surah
 
@@ -92,16 +91,16 @@ class User < ActiveRecord::Base
 	      ApiKey.create :user => self
       end
 
-      def statistics_by_sura(sura_id)
+      def statistics_by_sura(sura_id_param)
         points_total_user = 0
-        nb_cards = Card.where(:sura_id => sura_id).count
+        nb_cards = Card.where(:sura_id => sura_id_param).count
         points_total_sura = nb_cards * 3
         points_user = 0
         point1 = 0
         point2 = 0
         point3 = 0
         sura_id = nil
-        self.cards.where(:sura_id => sura_id).all.each do |card |
+        self.cards.where(:sura_id => sura_id_param).all.each do |card |
           points_user = points_user +  card.response
           if card.response == 1
             point1 = point1 + 1
