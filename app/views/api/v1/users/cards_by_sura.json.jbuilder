@@ -1,11 +1,12 @@
 cards ||= @cards
 
-json.array! cards do |card|
-  json.id card["id"]
-  json.word card["word"]
-  json.english_m card["english_m"]
-  json.response card["response"]
-  json.word card["word"]
-  json.date_response card["date_response"]
-end
+json.point1 cards["point1"]
+json.point2 cards["point2"]
+json.point3 cards["point3"]
+json.nb_cards_unknown cards["nb_cards_unknown"]
+json.nb_cards cards["nb_cards"]
+json.cards  cards["cards"]
+
+#json.array! cards do |card|
+
 

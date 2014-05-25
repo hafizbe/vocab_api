@@ -20,24 +20,44 @@ class User < ActiveRecord::Base
 
     # Détermine toutes les cartes connus en fonction de la sourate
     def cards_known(sura_id)
-      tab_retour = []
+      tab_retour = {"cards" => []}
       cards_for_user = self.cards.includes(:interrogations).where(:sura_id => sura_id)
       cards_for_user_ids = cards_for_user.ids
-
+      point1 = 0
+      point2 = 0
+      point3 = 0
+      nb_cards = 0
       cards_for_user.each do |card|
-        tab_retour << card.attributes.merge({"response"=>card.response}).merge({"sura_id" => card.id})
+        nb_cards  = nb_cards + 1
+        case card.response
+          when 1
+            point1 = point1 + 1
+          when 2
+            point2 = point2 + 1
+          when 3
+            point3 = point3 + 1
+        end
+
+        tab_retour["cards"] << card.attributes.merge({"response"=>card.response}).merge({"sura_id" => card.id})
         .merge({"date_response" => card.date_response})
       end
+      tab_retour["point1"] = point1
+      tab_retour["point2"] = point2
+      tab_retour["point3"] = point3
 
       if cards_for_user_ids.empty?
         cards_for_user_ids = ''
       end
 
       cards_for_sura = Card.where.not(id: cards_for_user_ids).where(:sura_id => sura_id)
+      nb_cards_unknown  = 0
       cards_for_sura.each do |card|
-
-        tab_retour << card.attributes.merge({"response"=> 0}).merge({"sura_id" => card.id})
+        nb_cards_unknown = nb_cards_unknown + 1
+        nb_cards  = nb_cards + 1
+        tab_retour["cards"] << card.attributes.merge({"response"=> 0}).merge({"sura_id" => card.sura_id})
       end
+      tab_retour["nb_cards_unknown"] = nb_cards_unknown
+      tab_retour["nb_cards"] = nb_cards
       tab_retour
     end
 
