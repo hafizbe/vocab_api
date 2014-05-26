@@ -27,7 +27,9 @@ class User < ActiveRecord::Base
       point2 = 0
       point3 = 0
       nb_cards = 0
+      points_user = 0
       cards_for_user.each do |card|
+        points_user = points_user + card.response
         nb_cards  = nb_cards + 1
         case card.response
           when 1
@@ -58,6 +60,7 @@ class User < ActiveRecord::Base
       end
       tab_retour["nb_cards_unknown"] = nb_cards_unknown
       tab_retour["nb_cards"] = nb_cards
+      tab_retour["percentage_sura"] = ServiceCalculator.percentage_sura nb_cards, points_user
       tab_retour
     end
 

@@ -1,5 +1,5 @@
 cards ||= @cards
-
+json.percentage_sura cards["percentage_sura"]
 json.point1 cards["point1"]
 json.point2 cards["point2"]
 json.point3 cards["point3"]
