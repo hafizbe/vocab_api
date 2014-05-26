@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
       tab_retour["nb_cards_unknown"] = nb_cards_unknown
       tab_retour["nb_cards"] = nb_cards
       tab_retour["percentage_sura"] = ServiceCalculator.percentage_sura nb_cards, points_user
+      tab_retour["sura_name_phonetic"] = Sura.find(sura_id).name_phonetic
       tab_retour
     end
 
