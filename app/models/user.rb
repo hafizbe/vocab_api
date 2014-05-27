@@ -39,9 +39,10 @@ class User < ActiveRecord::Base
           when 3
             point3 = point3 + 1
         end
-
+        date_response = card.date_response
+        date_response = ServiceConvertor.date_to_fr(card.date_response) unless card.date_response.nil?
         tab_retour["cards"] << card.attributes.merge({"response"=>card.response}).merge({"sura_id" => card.id})
-        .merge({"date_response" => card.date_response})
+        .merge({"date_response" => date_response})
       end
       tab_retour["point1"] = point1
       tab_retour["point2"] = point2
