@@ -1,4 +1,5 @@
 cards ||= @cards
+
 json.sura_name_phonetic cards["sura_name_phonetic"]
 json.percentage_sura cards["percentage_sura"]
 json.point1 cards["point1"]
