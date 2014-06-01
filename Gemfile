@@ -9,7 +9,6 @@ gem 'annotate'
 
 
 
-
 group :development do
  gem'meta_request'
  gem 'mysql2', '0.3.14'

@@ -22,6 +22,11 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def cards_to_work
+    @cards = @current_user.cards_unknown params[:sura_id]
+    respond_with @cards
+  end
+
   def cards_by_sura
     unless params[:sura_id].nil?
       @cards = @current_user.cards_known params[:sura_id]

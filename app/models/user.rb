@@ -18,6 +18,13 @@ class User < ActiveRecord::Base
 
     after_create :create_api_key
 
+
+    #Récupère les cartes  non apprises pour une sourate donnée
+    def cards_unknown(sura_id)
+      cards_for_user_ids =  self.cards.where(:sura_id => sura_id).ids
+      cards_unknown = Card.where.not(id: cards_for_user_ids).where(:sura_id => sura_id)
+    end
+
     # Détermine toutes les cartes connus en fonction de la sourate
     def cards_known(sura_id)
       tab_retour = {"cards" => []}
@@ -91,7 +98,7 @@ class User < ActiveRecord::Base
       if card.kind_of? Card
 
         #Initialisation
-        spaced_repetition = SpacedRepetition.new response_value.to_i
+        spaced_repetition = SpacedRepetition::Sm2.new response_value.to_i
         interrogation = Interrogation.new
 
         #Attribution des valeurs pour l'interrogation
