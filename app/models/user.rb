@@ -137,11 +137,11 @@ class User < ActiveRecord::Base
         sura_id = nil
         self.cards.where(:sura_id => sura_id_param).all.each do |card |
           points_user = points_user +  card.response
-          if card.response == 1
+          if card.response == 0
             point1 = point1 + 1
-          elsif card.response == 2
-            point2 = point2 + 1
           elsif card.response == 3
+            point2 = point2 + 1
+          elsif card.response == 5
             point3 = point3 + 1
           end
           sura_id = card.sura_id
