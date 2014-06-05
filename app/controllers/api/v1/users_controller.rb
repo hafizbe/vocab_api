@@ -16,7 +16,8 @@ class Api::V1::UsersController < ApplicationController
   def create_interrogation
     unless (params[:card_id].nil? or params[:response].nil?)
       card = Card.find params[:card_id]
-      @current_user.add_card card, params[:response]
+      @interrogation = @current_user.add_card card, params[:response]
+      respond_with @interrogation
     else
       raise "Les paramètres sont manquants"
     end

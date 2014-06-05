@@ -117,7 +117,7 @@ class User < ActiveRecord::Base
         raise "Le paramètre 'card' doit correspondre à une instance de type 'Card'"
       end
 
-
+      interrogation
     end
 
   private
