@@ -39,11 +39,11 @@ class User < ActiveRecord::Base
         points_user = points_user + card.response
         nb_cards  = nb_cards + 1
         case card.response
-          when 1
+          when 0
             point1 = point1 + 1
-          when 2
-            point2 = point2 + 1
           when 3
+            point2 = point2 + 1
+          when 5
             point3 = point3 + 1
         end
         date_response = card.date_response
@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
       cards_for_sura.each do |card|
         nb_cards_unknown = nb_cards_unknown + 1
         nb_cards  = nb_cards + 1
-        tab_retour["cards"] << card.attributes.merge({"response"=> 0}).merge({"sura_id" => card.sura_id})
+        tab_retour["cards"] << card.attributes.merge({"response"=> -1}).merge({"sura_id" => card.sura_id})
       end
       tab_retour["nb_cards_unknown"] = nb_cards_unknown
       tab_retour["nb_cards"] = nb_cards
