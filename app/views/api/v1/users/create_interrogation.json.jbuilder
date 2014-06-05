@@ -7,6 +7,7 @@ json.next_date int.next_date
 json.card_id int.card_id
 json.easiness_factor int.easiness_factor
 json.sura_id int.card.sura_id
+json.date_response int.date_response
 
 #  id              :integer          not null, primary key
 #  response        :integer
