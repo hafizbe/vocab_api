@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f464bd1-1bd6-4829-a724-19589285ce99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/api/v1/users/create_interrogation.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/api/v1/users/create_interrogation.json.jbuilder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/service_calculator.rb" afterPath="$PROJECT_DIR$/lib/service_calculator.rb" />
     </list>
     <list id="6ecb1e3f-f79d-473f-878f-930a33c45fdb" name="New changelist" comment="" />
     <ignored path="vocab_api.iws" />
@@ -36,17 +36,27 @@
       <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.178572" vertical-offset="548" max-vertical-offset="2737">
-              <caret line="49" column="71" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="71" />
+            <state vertical-scroll-proportion="-13.821428" vertical-offset="803" max-vertical-offset="2737">
+              <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_interrogation.json.jbuilder" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="service_calculator.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/service_calculator.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12927757" vertical-offset="0" max-vertical-offset="526">
+              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_interrogation.json.jbuilder" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/create_interrogation.json.jbuilder">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2908745" vertical-offset="0" max-vertical-offset="526">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
               <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
               <folding />
             </state>
@@ -113,7 +123,6 @@
         <option value="$PROJECT_DIR$/app/models/card.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140521144828_change_date_format_in_interrogation.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/users/suras.json.jbuilder" />
-        <option value="$PROJECT_DIR$/lib/service_calculator.rb" />
         <option value="$PROJECT_DIR$/lib/service_convertor.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/users/cards_by_sura.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/cards_controller.rb" />
@@ -125,6 +134,7 @@
         <option value="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/users/create_interrogation.json.jbuilder" />
+        <option value="$PROJECT_DIR$/lib/service_calculator.rb" />
       </list>
     </option>
   </component>
@@ -1039,13 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/service_calculator.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2651072" vertical-offset="0" max-vertical-offset="513">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/activerecord-4.1.1/lib/active_record/attribute_methods.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33269963" vertical-offset="3140" max-vertical-offset="8024">
@@ -1208,18 +1211,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/create_interrogation.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.178572" vertical-offset="548" max-vertical-offset="2737">
-          <caret line="49" column="71" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/create_interrogation.json.jbuilder">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2908745" vertical-offset="0" max-vertical-offset="526">
-          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+        <state vertical-scroll-proportion="-13.821428" vertical-offset="803" max-vertical-offset="2737">
+          <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/service_calculator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12927757" vertical-offset="0" max-vertical-offset="526">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
           <folding />
         </state>
       </provider>
