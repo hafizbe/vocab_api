@@ -107,6 +107,8 @@ class User < ActiveRecord::Base
         interrogation.card = card
         interrogation.response = response_value
         interrogation.date_response = Time.now
+        interrogation.easiness_factor = spaced_repetition.easiness_factor
+        interrogation.next_interval = spaced_repetition.interval
 
         if  !interrogation.save
           raise "Ajout du mot impossible"
