@@ -8,7 +8,7 @@ VocabApi::Application.routes.draw do
        get "users/create_interrogation" , :defaults => {:format => "json"}
        get "users/suras", :defaults => {:format => "json"}
        get "users/cards_by_sura", :defaults => {:format => "json"}
-       get "users/cards_of_today", :defaults => {:format => "json"}
+       get "users/statistics_home", :defaults => {:format => "json"}
        get "users/cards_to_work/:sura_id" => 'users#cards_to_work', :defaults => {:format => "json"}
        get "cards/:id" => 'cards#show', :defaults => {:format => "json"}
 

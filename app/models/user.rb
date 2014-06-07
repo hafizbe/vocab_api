@@ -13,14 +13,21 @@
 class User < ActiveRecord::Base
 	has_one :api_key, dependent: :destroy
 	has_many :interrogations
-  has_many :cards, ->{ select("cards.*,interrogations.response, interrogations.next_date, interrogations.date_response, interrogations.id as id_interrogation") },
+  has_many :cards, ->{ select("cards.*,interrogations.response, interrogations.next_date, interrogations.date_response,
+                               interrogations.id as id_interrogation") },
        		 :through => :interrogations
 
     after_create :create_api_key
 
-    # Récupère toutes les dates à réviser selon l'agorithme
+
+  # Récupère toutes les dates à réviser selon l'agorithme
   def cards_of_today
     self.cards.where("interrogations.next_date <= ?", Date.today)
+  end
+
+  # Indique le % de compréhension du Quran
+  def percentage_total
+    (self.cards.where("interrogations.response = ?", 5).length.to_f / Card.count).round 2
   end
 
   # Défini le pourcentage de connaissance pour la sourate en paramètre
