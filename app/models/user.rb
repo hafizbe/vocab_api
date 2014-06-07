@@ -137,7 +137,8 @@ class User < ActiveRecord::Base
         raise "Le paramètre 'card' doit correspondre à une instance de type 'Card'"
       end
 
-      interrogation.attributes.merge({"percentage_sura" => self.nb_points_by_sura(card.sura_id)})
+      #interrogation.attributes.merge({"percentage_sura" => self.nb_points_by_sura(card.sura_id)})
+      interrogation
     end
 
   private
