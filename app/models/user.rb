@@ -18,7 +18,12 @@ class User < ActiveRecord::Base
 
     after_create :create_api_key
 
-    # Défini le pourcentage de connaissance pour la sourate en paramètre
+    # Récupère toutes les dates à réviser selon l'agorithme
+  def cards_of_today
+    self.cards.where("interrogations.next_date <= ?", Date.today)
+  end
+
+  # Défini le pourcentage de connaissance pour la sourate en paramètre
     def nb_points_by_sura(sura_id)
       points_user = 0
       point1 = 0

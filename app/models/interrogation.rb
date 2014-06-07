@@ -18,4 +18,16 @@
 class Interrogation < ActiveRecord::Base
 	belongs_to :card
   belongs_to :user
+
+  def new_interrogation(response)
+    spaced_repetition = SpacedRepetition::Sm2.new response, self.next_interval, self.easiness_factor
+
+    next_date = spaced_repetition.next_repetition_date
+    response = response
+    date_response = Time.now
+    easiness_factor = spaced_repetition.easiness_factor
+    next_interval = spaced_repetition.interval
+    self.update_attributes(:next_date => next_date, :response => response, :date_response => date_response,
+                           :easiness_factor => easiness_factor, :next_interval  => next_interval)
+  end
 end

@@ -38,4 +38,9 @@ class Api::V1::UsersController < ApplicationController
 
   end
 
+  def cards_of_today
+    @cards = @current_user.cards_of_today
+    respond_with @cards
+  end
+
 end
