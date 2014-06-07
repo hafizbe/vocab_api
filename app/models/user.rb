@@ -18,6 +18,26 @@ class User < ActiveRecord::Base
 
     after_create :create_api_key
 
+    # Défini le pourcentage de connaissance pour la sourate en paramètre
+    def nb_points_by_sura(sura_id)
+      points_user = 0
+      point1 = 0
+      point2 = 0
+      point3 = 0
+      nb_cards = Card.where(:sura_id =>  sura_id).count
+      self.cards.where(:sura_id => sura_id).all.each do |card|
+        points_user = points_user +  card.response
+        if card.response == 0
+          point1 = point1 + 1
+        elsif card.response == 3
+          point2 = point2 + 1
+        elsif card.response == 5
+          point3 = point3 + 1
+        end
+      end
+      ServiceCalculator.percentage_sura nb_cards, points_user
+    end
+
 
     #Récupère les cartes  non apprises pour une sourate donnée
     def cards_unknown(sura_id)
@@ -117,7 +137,7 @@ class User < ActiveRecord::Base
         raise "Le paramètre 'card' doit correspondre à une instance de type 'Card'"
       end
 
-      interrogation
+      interrogation.attributes.merge({"percentage_sura" => self.nb_points_by_sura(card.sura_id)})
     end
 
   private
@@ -152,4 +172,6 @@ class User < ActiveRecord::Base
          return   {'points_total_user'=> points_total_user, 'point1' => point1, 'point2' => point2, 'point3' => point3,
                   'nb_cards' => nb_cards}
       end
+
+
 end
