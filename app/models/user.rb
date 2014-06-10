@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     after_create :create_api_key
 
 
-  # Récupère toutes les dates à réviser selon l'agorithme
+  # Récupère toutes les dates à réviser
   def cards_of_today
     self.cards.where("interrogations.next_date <= ?", Date.today)
   end
@@ -153,6 +153,16 @@ class User < ActiveRecord::Base
       interrogation
     end
 
+    # Met à jour la carte. Il s'agit ici d'une révision, et pas d'un apprentissage.
+    def update_card(response, card_id)
+      interrogation = Interrogation.where(:card_id => card_id, :user_id => self.id).first
+
+      unless interrogation.nil?
+        interrogation.revision response
+      else
+        raise "Interrogation introuvable"
+      end
+    end
   private
 
 	    def create_api_key
