@@ -8,4 +8,5 @@ json.cards_to_revise cards do |card|
   json.sura_id card.sura_id
   json.aya_id card.aya_id
   json.juzz_id card.juzz_id
+  json.name_sura card.sura.name_phonetic
 end
