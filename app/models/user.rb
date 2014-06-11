@@ -172,7 +172,7 @@ class User < ActiveRecord::Base
       def statistics_by_sura(sura_id_param)
         points_total_user = 0
         nb_cards = Card.where(:sura_id => sura_id_param).count
-        points_total_sura = nb_cards * 3
+        points_total_sura = nb_cards * 5
         points_user = 0
         point1 = 0
         point2 = 0
