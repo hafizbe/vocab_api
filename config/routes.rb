@@ -6,6 +6,7 @@ VocabApi::Application.routes.draw do
        get "suras/index" , :defaults => {:format => "json"}
        get "users/cards" , :defaults => {:format => "json"}
        get "users/create_interrogation" , :defaults => {:format => "json"}
+       get "users/update_interrogation" , :defaults => {:format => "json"}
        get "users/suras", :defaults => {:format => "json"}
        get "users/cards_by_sura", :defaults => {:format => "json"}
        get "users/statistics_home", :defaults => {:format => "json"}

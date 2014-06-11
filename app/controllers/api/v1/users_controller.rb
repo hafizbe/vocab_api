@@ -23,6 +23,11 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def update_interrogation
+    @interrogation = @current_user.update_card params[:response], params[:card_id]
+    respond_with @interrogation
+  end
+
   def cards_to_work
     @cards = @current_user.cards_unknown params[:sura_id]
     respond_with @cards

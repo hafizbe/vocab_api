@@ -158,7 +158,7 @@ class User < ActiveRecord::Base
       interrogation = Interrogation.where(:card_id => card_id, :user_id => self.id).first
 
       unless interrogation.nil?
-        interrogation.revision response
+        interrogation.revision response.to_i
       else
         raise "Interrogation introuvable"
       end
