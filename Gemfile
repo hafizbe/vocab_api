@@ -11,7 +11,7 @@ gem 'annotate'
 
 group :development do
  gem'meta_request'
- gem 'mysql2', '0.3.14'
+ gem 'mysql2'
 end
 
 group :production do
