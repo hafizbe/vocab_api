@@ -111,7 +111,7 @@ DEPENDENCIES
   annotate
   jbuilder
   meta_request
-  mysql2
+  mysql2 (= 0.3.14)
   nokogiri (~> 1.6.2.1)
   pg
   rails (= 4.1.1)

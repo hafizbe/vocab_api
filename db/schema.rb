@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521144828) do
+ActiveRecord::Schema.define(version: 20140705134343) do
 
   create_table "api_keys", force: true do |t|
     t.string   "token"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140521144828) do
     t.integer  "juzz_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fr_m"
   end
 
   add_index "cards", ["sura_id"], name: "index_cards_on_sura_id", using: :btree

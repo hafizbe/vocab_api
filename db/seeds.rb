@@ -33,8 +33,14 @@ cards.length.times do |i|
   sura_id = cards[i].xpath("F_Surah/text()").to_s.to_i#On parse en String et en Int car il y avait des pb de conversions
   aya_id = cards[i].xpath("F_Aaiyat/text()").to_s.to_i
   urdu_m = cards[i].xpath("Urdu_Meaning/text()").to_s
-  juzz_id = cards[i].xpath("F_Juzz/text()").to_s.to_i
+  juzz_id = cards[i].xpath("F_Juzz/text()").to_s
+  french_m = cards[i].xpath("FR_Meaning/text()").to_s
 
-  card = Card.new(:word => word, :english_m => english_m, :sura_id => sura_id, :aya_id => aya_id, :urdu_m => urdu_m, :juzz_id => juzz_id)
+  if french_m.empty?
+    french_m = nil
+  end
+
+  card = Card.new(:word => word, :english_m => english_m, :sura_id => sura_id, :aya_id => aya_id, :urdu_m => urdu_m,
+                  :juzz_id => juzz_id,  :fr_m => french_m)
   card.save
 end
