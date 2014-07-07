@@ -19,6 +19,15 @@ class User < ActiveRecord::Base
 
     after_create :create_api_key
 
+  def self.authenticate(email,  password)
+    user = User.find_by_email email
+    return nil if user.nil?
+    return user if user.has_password password
+  end
+
+  def has_password(password)
+    return true
+  end
 
   # Récupère toutes les dates à réviser
   def cards_of_today

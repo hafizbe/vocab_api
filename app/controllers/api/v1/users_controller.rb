@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
 
-  before_filter :restrict_access
+  before_filter :restrict_access, :except => [:authenticate]
   respond_to :json
 
   def cards
@@ -46,6 +46,15 @@ class Api::V1::UsersController < ApplicationController
   def statistics_home
     @cards = @current_user.cards_of_today
     respond_with @cards
+  end
+
+  def authenticate
+    user = User.authenticate(params[:email], params[:password])
+    unless user.nil?
+      render json: {message: user.api_key.token}, status: 200
+    else
+      render json: {message: 'Invalid login or password'}, status: 401
+    end
   end
 
 end
