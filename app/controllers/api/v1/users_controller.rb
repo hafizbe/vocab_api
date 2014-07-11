@@ -51,7 +51,7 @@ class Api::V1::UsersController < ApplicationController
   def authenticate
     user = User.authenticate(params[:email], params[:password])
     unless user.nil?
-      render json: {message: user.api_key.token}, status: 200
+      render json: {message: user.api_key.token, login: user.name}, status: 200
     else
       render json: {message: 'Invalid login or password'}, status: 401
     end
