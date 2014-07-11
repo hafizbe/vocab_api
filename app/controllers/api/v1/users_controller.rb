@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
 
-  before_filter :restrict_access, :except => [:authenticate]
+  before_filter :restrict_access, :except => [:authenticate, :create]
   respond_to :json
 
   def cards
@@ -54,6 +54,15 @@ class Api::V1::UsersController < ApplicationController
       render json: {message: user.api_key.token}, status: 200
     else
       render json: {message: 'Invalid login or password'}, status: 401
+    end
+  end
+
+  def create
+    user = User.new(:email => params[:email], :password => params[:password], :name => params[:pseudo])
+    if user.save
+      render json: {message: user.api_key.token, success: true}, status: 200
+    else
+      render json: {message: user.errors, success: false}, status: 200
     end
   end
 

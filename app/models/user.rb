@@ -11,6 +11,8 @@
 #
 
 class User < ActiveRecord::Base
+  validates :name, :email, :password, :presence =>  true
+
 	has_one :api_key, dependent: :destroy
 	has_many :interrogations
   has_many :cards, ->{ select("cards.*,interrogations.response, interrogations.next_date, interrogations.date_response,
@@ -18,6 +20,10 @@ class User < ActiveRecord::Base
        		 :through => :interrogations
 
     after_create :create_api_key
+
+
+
+
 
   def self.authenticate(email,  password)
     user = User.find_by_email email

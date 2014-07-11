@@ -13,6 +13,7 @@ VocabApi::Application.routes.draw do
        get "users/cards_to_work/:sura_id" => 'users#cards_to_work', :defaults => {:format => "json"}
        get "cards/:id" => 'cards#show', :defaults => {:format => "json"}
        post "users/authenticate", :defaults => {:format => "json"}
+       post "users/create", :defaults => {:format => "json"}
     end
   end
  
