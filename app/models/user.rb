@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def has_password(password)
-    return true
+    return true if password == self.password
   end
 
   # Récupère toutes les dates à réviser
